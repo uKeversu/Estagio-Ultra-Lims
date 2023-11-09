@@ -20,10 +20,6 @@ function myFunction() {
   DESAFIO 2
 */
 
-function teste() {
-  alert("teste");
-}
-
 /*
   SOLICITANDO API
 */
