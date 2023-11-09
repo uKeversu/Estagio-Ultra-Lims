@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Desafio lógico - Ultra Lims</title>
+    <link rel="shortcut icon" href="img/medical-lab.png" />
+  </head>
+  <body>
+    <header id="home">
+      <img
+        class="mb-3"
+        src="https://ultralims.com.br/front/images/logo.svg"
+        alt="Logo-UltraLims"
+        href="https://ultralims.com.br"
+      />
+      <h2 class="text-light">Desafio de estágio</h2>
+    </header>
+
+    <nav class="navbar d-flex justify-content-around" id="nav">
+      <a class="nav-item" href="#home">Home</a>
+      <a class="nav-item" href="#desafio1">Desafio 1</a>
+      <a class="nav-item" href="#desafio2">Desafio 2</a>
+    </nav>
+
+    <div class="container mt-5">
+      <h3 class="d-flex justify-content-center">
+        Olá, foi um enorme prazer participar desta seletiva.
+      </h3>
+      <h4 class="d-flex justify-content-center mb-5" id="desafio1">
+        Abaixo os desafios:
+      </h4>
+
+      <section class="desafio1 d-flex flex-column">
+        <h4>Lógica</h4>
+        <div class="row d-flex justify-content-around">
+          <div class="col-md-3">
+            <button
+              class="btn btn-primary"
+              id="btn-desafio1"
+              onclick="exercicio1()"
+            >
+              1
+            </button>
+          </div>
+          <div class="col-md-3">
+            <button
+              class="btn btn-primary"
+              id="btn-desafio1"
+              onclick="exercicio2()"
+            >
+              2
+            </button>
+          </div>
+          <div class="col-md-3">
+            <button
+              class="btn btn-primary"
+              id="btn-desafio1"
+              onclick="exercicio3()"
+            >
+              3
+            </button>
+          </div>
+        </div>
+        <div class="row d-flex justify-content-around">
+          <div class="col-md-3">
+            <button
+              class="btn btn-primary"
+              id="btn-desafio1"
+              onclick="exercicio4()"
+            >
+              4
+            </button>
+          </div>
+          <div class="col-md-3">
+            <button
+              class="btn btn-primary"
+              id="btn-desafio1"
+              onclick="exercicio5()"
+            >
+              5
+            </button>
+          </div>
+          <div class="col-md-3">
+            <button
+              class="btn btn-primary"
+              id="btn-desafio1"
+              onclick="exercicio6()"
+            >
+              6
+            </button>
+          </div>
+        </div>
+      </section>
+      <hr />
+      <section class="desafio2 mt-5 mb-5" id="desafio2">
+        <h4>Utilização de API</h4>
+
+        <div class="form-group col-md-2 mt-3">
+          <label for="cepInput">CEP:</label>
+          <input type="number" class="input-cep form-control" id="cepInput" />
+        </div>
+        <button
+          type="button"
+          class="btn btn-primary btn-buscar-cep mt-3"
+          onclick="buscarEndereco()"
+        >
+          Buscar
+        </button>
+
+        <div class="table-container mt-5">
+          <h4>Listagem dos CEPs</h4>
+
+          <div class="dropdown d-flex justify-content-end">
+            <button
+              class="btn-ordenar btn btn-primary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Ordenar por
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <button
+                  class="btn-filter d-flex m-auto"
+                  onclick="ordenarRegistros('bairro', 'crescente')"
+                  type="button"
+                >
+                  Bairro (A-Z)
+                </button>
+
+                <button
+                  class="btn-filter d-flex m-auto"
+                  onclick="ordenarRegistros('bairro', 'decrescente')"
+                  type="button"
+                >
+                  Bairro (Z-A)
+                </button>
+              </li>
+              <hr />
+              <li>
+                <button
+                  class="btn-filter d-flex m-auto"
+                  onclick="ordenarRegistros('localidade', 'crescente')"
+                  type="button"
+                >
+                  Cidade (A-Z)
+                </button>
+
+                <button
+                  class="btn-filter d-flex m-auto"
+                  onclick="ordenarRegistros('localidade', 'decrescente')"
+                  type="button"
+                >
+                  Cidade (Z-A)
+                </button>
+              </li>
+              <hr />
+              <li>
+                <button
+                  class="btn-filter d-flex m-auto"
+                  onclick="ordenarRegistros('uf', 'crescente')"
+                  type="button"
+                >
+                  Estado (A-Z)
+                </button>
+
+                <button
+                  class="btn-filter d-flex m-auto"
+                  onclick="ordenarRegistros('uf', 'decrescente')"
+                  type="button"
+                >
+                  Estado (Z-A)
+                </button>
+              </li>
+            </ul>
+          </div>
+          <table class="table table-responsive mt-3">
+            <thead>
+              <tr>
+                <th scope="col">CEP</th>
+                <th scope="col">Rua</th>
+                <th scope="col">Bairro</th>
+                <th scope="col">Cidade</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Excluir</th>
+              </tr>
+            </thead>
+            <tbody id="registros">
+              <!---->
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <footer class="p-4">
+      <p class="d-flex justify-content-center">
+        Desenvolvido por Kelwin Gameiro
+      </p>
+    </footer>
+    <script src="js/desafio1.js"></script>
+    <script src="js/script.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

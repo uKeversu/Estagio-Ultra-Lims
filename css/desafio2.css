@@ -1,0 +1,78 @@
+.input-cep {
+  border: 2px solid var(--dark-blue);
+  border-radius: 2vh;
+}
+
+.input-cep:focus {
+  border: 2px solid var(--dark-blue);
+  box-shadow: 0px 0px 2px 2px var(--blue);
+}
+
+/*
+  OCULTAR SETAS DO INPUT
+*/
+
+.input-cep::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.input-cep {
+  -moz-appearance: textfield;
+}
+
+.btn-buscar-cep {
+  background-color: var(--blue);
+  border: 2px solid var(--blue-hover);
+  color: var(--white);
+  border-radius: 1vh;
+}
+
+.btn-buscar-cep:hover {
+  background-color: var(--blue-hover);
+  border: 2px solid var(--blue-hover);
+  color: var(--white);
+}
+
+.btn-ordenar {
+  background-color: var(--blue);
+  border: 2px solid var(--blue-hover);
+  color: var(--white);
+  border-radius: 1vh;
+}
+
+.btn-ordenar:hover {
+  background-color: var(--blue-hover);
+  border: 2px solid var(--blue-hover);
+  color: var(--white);
+}
+
+.btn-filter {
+  background-color: var(--white);
+  border: none;
+  color: var(--blue);
+  display: flex;
+}
+
+.btn-filter:hover {
+  color: var(--blue-hover);
+}
+
+hr {
+  margin: 5px;
+}
+/*
+  APAGAR
+*/
+.btn-apagar {
+  background-color: var(--blue);
+  border: 2px solid var(--blue-hover);
+  color: var(--white);
+  border-radius: 1vh;
+  font-size: smaller;
+  width: 50%;
+}
+
+.btn-apagar:hover {
+  background-color: var(--blue-hover);
+  color: var(--white);
+}

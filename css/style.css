@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Belanosima&family=Poppins&family=Rubik&display=swap");
+
+@import url(desafio1.css);
+@import url(desafio2.css);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+:root {
+  --blue: #01aef0;
+  --blue-hover: #058fc5;
+  --dark-blue: #16213e;
+  --dark: #333;
+  --white: white;
+}
+
+/*
+  STICKY MENU
+*/
+
+header {
+  background-color: var(--dark-blue);
+  padding: 60px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: var(--blue);
+}
+
+.navbar a {
+  display: block;
+  color: var(--white);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  color: var(--dark-blue);
+  transition: 0.5s;
+}
+
+.navbar a.active {
+  border-bottom: 2px solid var(--dark-blue);
+  color: var(--white);
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 90%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+
+/*
+  FOOTER
+*/
+
+footer {
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
+
+/*
+    SCROLL BAR
+*/
+::-webkit-scrollbar {
+  width: 1vh;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-blue);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--blue);
+  border-radius: 1vh;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--blue);
+}
